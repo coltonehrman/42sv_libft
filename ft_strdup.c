@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 06:36:14 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 12:39:50 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/19 09:47:08 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/19 09:54:25 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+char	*ft_strdup(const char *s1)
 {
-	void	*mem;
+	int		i;
+	int		size;
+	char	*dup;
 
-	mem = malloc(size);
-	if (!mem)
+	size = ft_strlen(s1);
+	dup = (char *)malloc(sizeof(char) * (size + 1));
+	if (!dup)
 		return (0);
-	ft_bzero(mem, size);
-	return (mem);
+	i = 0;
+	while (i <= size)
+	{
+		dup[i] = s1[i];
+		i++;
+	}
+	return (dup);
 }

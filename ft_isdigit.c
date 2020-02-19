@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 06:36:14 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 12:39:50 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/18 21:18:34 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/18 21:20:27 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_isdigit(int c)
 {
-	void	*mem;
-
-	mem = malloc(size);
-	if (!mem)
-		return (0);
-	ft_bzero(mem, size);
-	return (mem);
+	return (c >= 48 && c <= 57);
 }

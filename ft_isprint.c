@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 06:36:14 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 12:39:50 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/18 21:27:04 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/18 21:28:37 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int		ft_isprint(int c)
 {
-	void	*mem;
-
-	mem = malloc(size);
-	if (!mem)
-		return (0);
-	ft_bzero(mem, size);
-	return (mem);
+	return (c >= 32 && c <= 126);
 }

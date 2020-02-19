@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 06:36:14 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 12:39:50 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/18 13:19:28 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/18 16:40:54 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	void	*mem;
+	unsigned char	match;
+	unsigned char	*ptr;
 
-	mem = malloc(size);
-	if (!mem)
-		return (0);
-	ft_bzero(mem, size);
-	return (mem);
+	match = c;
+	ptr = dst;
+	if (!dst && !src)
+		return (dst);
+	while (n > 0)
+	{
+		*ptr = *((unsigned char *)src);
+		if (*ptr == match)
+			return (ptr + 1);
+		ptr++;
+		src++;
+		n--;
+	}
+	return (0);
 }

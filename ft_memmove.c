@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 06:36:14 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 12:39:50 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/18 16:18:04 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/18 20:49:16 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memalloc(size_t size)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	void	*mem;
+	char		*c_dst;
+	const char	*c_src;
+	size_t		i;
 
-	mem = malloc(size);
-	if (!mem)
-		return (0);
-	ft_bzero(mem, size);
-	return (mem);
+	i = 0;
+	c_dst = dst;
+	c_src = src;
+	if (!dst && !src)
+		return (dst);
+	if (c_src < c_dst)
+		while (i++ < len)
+			c_dst[len - i] = c_src[len - i];
+	else
+	{
+		while (len-- > 0)
+		{
+			*c_dst = *c_src;
+			c_dst++;
+			c_src++;
+		}
+	}
+	return (dst);
 }

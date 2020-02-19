@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 12:23:51 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 13:53:16 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/19 14:12:24 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/19 14:21:14 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int		ft_atoi(const char *str)
 {
-	if (!(*needle))
-		return ((char *)haystack);
-	while (*haystack)
+	int	i;
+	int	negative;
+
+	i = 0;
+	negative = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
 	{
-		if (ft_strmatch((char *)haystack, (char *)needle))
-			return ((char *)haystack);
-		haystack++;
+		negative = -1;
+		str++;
 	}
-	return (0);
+	while (*str && ft_isdigit(*str))
+	{
+		i *= 10;
+		i += (int)((*str) - 48);
+		str++;
+	}
+	return (i * negative);
 }

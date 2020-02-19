@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 12:23:51 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 13:53:16 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/19 14:19:18 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/19 14:20:30 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int		ft_isspace(char c)
 {
-	if (!(*needle))
-		return ((char *)haystack);
-	while (*haystack)
-	{
-		if (ft_strmatch((char *)haystack, (char *)needle))
-			return ((char *)haystack);
-		haystack++;
-	}
-	return (0);
+	return (c == '\t' || c == '\n' || c == '\v'
+			|| c == '\f' || c == '\r' || c == ' ');
 }

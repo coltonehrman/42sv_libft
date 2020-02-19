@@ -6,12 +6,18 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 06:36:40 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 13:29:43 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/19 14:29:23 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef MAXINT
+#  define MAXINT 2147483647
+# endif
+# ifndef MININT
+#  define MININT -2147483648
+# endif
 # include <stdlib.h>
 
 void	*ft_memset(void *b, int c, size_t len);
@@ -31,10 +37,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
-
-int		ft_strmatch(char *s1, char *s2);
-int		ft_islower(int c);
-int		ft_isupper(int c);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+int		ft_atoi(const char *str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -42,8 +48,14 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+int		ft_islower(int c);
+int		ft_isupper(int c);
+int		ft_isspace(char c);
+
+int		ft_strmatch(char *s1, char *s2);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 #endif

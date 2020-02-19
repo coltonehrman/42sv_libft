@@ -6,11 +6,10 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 21:46:41 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 22:04:14 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/19 14:09:16 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)

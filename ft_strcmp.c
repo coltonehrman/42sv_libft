@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 12:23:51 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 13:53:16 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/19 14:09:05 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/19 14:11:16 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	if (!(*needle))
-		return ((char *)haystack);
-	while (*haystack)
+	int	i;
+
+	i = 0;
+	if (!s1[i])
+		return (0 - (unsigned char)s2[i]);
+	while (s1[i])
 	{
-		if (ft_strmatch((char *)haystack, (char *)needle))
-			return ((char *)haystack);
-		haystack++;
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
 	return (0);
 }

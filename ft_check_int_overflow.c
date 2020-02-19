@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_check_int_overflow.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 12:23:51 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 13:53:16 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/19 14:27:15 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/19 14:34:01 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+int		ft_int_overflow(int num, int added)
 {
-	if (!(*needle))
-		return ((char *)haystack);
-	while (*haystack)
-	{
-		if (ft_strmatch((char *)haystack, (char *)needle))
-			return ((char *)haystack);
-		haystack++;
-	}
-	return (0);
+	
 }

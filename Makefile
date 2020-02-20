@@ -2,12 +2,10 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
 SOURCES = ./libft.h
-CFILES = *.c
-
 NAME = libft.a
 
 $(NAME):
-	$(CC) $(CFLAGS) -c $(CFILES)
+	$(CC) $(CFLAGS) -c ft_*.c
 	ar rcs $(NAME) *.o
 	ranlib $(NAME)
 

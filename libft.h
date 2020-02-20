@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 06:36:40 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 19:06:36 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/19 19:09:53 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,12 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isspace(char c);
-
 int		ft_strmatch(char *s1, char *s2);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
-
 int		ft_int_overflow(int n1, char op, int n2);
 #endif

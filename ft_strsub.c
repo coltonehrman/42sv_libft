@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 11:41:17 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 10:11:02 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/20 08:35:57 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/20 08:57:48 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	dst_len;
-	int	src_len;
-	int	to_append;
+	char	*sub;
+	int		i;
 
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	to_append = ((int)dstsize) - dst_len - 1;
+	sub = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s || !sub)
+		return (0);
 	i = 0;
-	while (i < to_append && i <= src_len)
+	while (i < (int)len)
 	{
-		dst[dst_len] = src[i];
-		dst_len++;
+		sub[i] = s[start];
 		i++;
+		start++;
 	}
-	return (dst_len + src_len);
+	sub[i] = 0;
+	return (sub);
 }

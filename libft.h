@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 06:36:40 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 09:56:20 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/20 10:35:52 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,12 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
 
 int		ft_strmatch(char *s1, char *s2);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int		ft_count_char(const char *s, char c);
+int		ft_count_words(const char *s, char c);
+int		ft_count_till(const char *s, char c);
 int		ft_int_overflow(int n1, char op, int n2);
 #endif

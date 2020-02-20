@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 06:36:40 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 10:35:52 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/20 13:01:21 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #  define MININT -2147483648
 # endif
 # include <stdlib.h>
+# include <unistd.h>
 
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
@@ -68,11 +69,15 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
+char	*ft_itoa(int n);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 
 int		ft_strmatch(char *s1, char *s2);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_count_char(const char *s, char c);
 int		ft_count_words(const char *s, char c);
 int		ft_count_till(const char *s, char c);
+int		ft_count_digits(int n);
 int		ft_int_overflow(int n1, char op, int n2);
 #endif

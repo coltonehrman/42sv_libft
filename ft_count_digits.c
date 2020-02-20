@@ -1,40 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_count_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 16:18:04 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 12:04:59 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/20 12:09:36 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/20 12:25:37 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int		ft_count_digits(int n)
 {
-	char		*c_dst;
-	const char	*c_src;
-	size_t		i;
-
-	i = 0;
-	c_dst = dst;
-	c_src = src;
-	if (!dst && !src)
-		return (dst);
-	if (c_src < c_dst)
-		while (i++ < len)
-			c_dst[len - i] = c_src[len - i];
-	else
+	if (n < 0)
 	{
-		while (len-- > 0)
-		{
-			*c_dst = *c_src;
-			c_dst++;
-			c_src++;
-		}
+		return ((n == MININT) ?
+			ft_count_digits((n + 1) * -1) :
+			ft_count_digits(n * -1));
 	}
-	return (dst);
+	if (n <= 9)
+		return (1);
+	return (1 + ft_count_digits(n / 10));
 }

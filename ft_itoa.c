@@ -1,40 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 16:18:04 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 12:04:59 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/20 12:08:09 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/20 12:45:15 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+char	*ft_itoa(int n)
 {
-	char		*c_dst;
-	const char	*c_src;
-	size_t		i;
+	char	*str;
+	int		digits;
+	int		i;
 
+	digits = ft_count_digits(n);
+	if (n < 0)
+		digits++;
+	str = (char *)malloc(sizeof(char) * (digits + 1));
+	if (!str)
+		return (0);
 	i = 0;
-	c_dst = dst;
-	c_src = src;
-	if (!dst && !src)
-		return (dst);
-	if (c_src < c_dst)
-		while (i++ < len)
-			c_dst[len - i] = c_src[len - i];
-	else
+	if (n < 0)
 	{
-		while (len-- > 0)
-		{
-			*c_dst = *c_src;
-			c_dst++;
-			c_src++;
-		}
+		str[i++] = '-';
+		if (n == MININT)
+			str[i++] = '2';
+		n = (n == MININT) ? (n + 2000000000) * -1 : n * -1;
 	}
-	return (dst);
+	str[digits--] = 0;
+	while (digits >= i)
+	{
+		str[digits--] = (char)((n % 10) + 48);
+		n /= 10;
+	}
+	return (str);
 }

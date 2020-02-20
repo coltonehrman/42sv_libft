@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 06:36:40 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 19:09:53 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/19 20:18:12 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,18 @@ int		ft_tolower(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isspace(char c);
-int		ft_strmatch(char *s1, char *s2);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+int		ft_strmatch(char *s1, char *s2);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 int		ft_int_overflow(int n1, char op, int n2);
 #endif

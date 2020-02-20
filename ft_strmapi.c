@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int_overflow.c                                  :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/19 19:41:31 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 19:41:33 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/19 20:17:51 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/19 20:21:16 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_int_overflow(int n1, char op, int n2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	res;
+	char	*new_str;
+	int		i;
+	int		len;
 
-	if (op == '+')
-		res = n1 + n2;
-	else if (op == '*')
-		res = n1 * n2;
-	else
+	if (!s || !f)
 		return (0);
-	if (n1 > 0 && n2 > 0 && res < 0)
-		return (-1);
-	else if (n1 < 0 && n2 < 0 && res > 0)
-		return (-1);
-	return (0);
+	i = -1;
+	len = ft_strlen(s);
+	new_str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new_str)
+		return (0);
+	while (++i < len)
+		new_str[i] = f(i, s[i]);
+	new_str[i] = 0;
+	return (new_str);
 }

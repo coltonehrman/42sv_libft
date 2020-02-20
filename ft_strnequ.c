@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:36:00 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 20:36:13 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/20 14:09:10 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
+	int i;
+
 	if (!s1 || !s2)
 		return (0);
-	return ((ft_strncmp(s1, s2, n) != 0) ? 1 : 0);
+	i = 0;
+	while ((s1[i] || s2[i]) && i < (int)n)
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	return (1);
 }

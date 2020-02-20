@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 08:57:17 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 13:54:56 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/20 13:08:13 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/20 13:44:08 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr(int n)
 {
-	char	*str;
+	char c;
 
-	if (!s1 || !s2)
-		return (0);
-	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!str)
-		return (0);
-	ft_strcpy(str, s1);
-	ft_strcat(str, s2);
-	return (str);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		if (n == MININT)
+			ft_putchar('2');
+		ft_putnbr((n == MININT) ? ((n + 2000000000) * -1) : n * -1);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbr(n / 10);
+		c = (char)((n % 10) + 48);
+		ft_putchar(c);
+	}
 }

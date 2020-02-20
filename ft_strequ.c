@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:29:20 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 20:34:13 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/20 14:09:11 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,12 @@ int		ft_strequ(char const *s1, char const *s2)
 {
 	if (!s1 || !s2)
 		return (0);
-	return ((ft_strcmp(s1, s2) != 0) ? 1 : 0);
+	while (*s1 || *s2)
+	{
+		if (*s1 != *s2)
+			return (0);
+		s1++;
+		s2++;
+	}
+	return (1);
 }

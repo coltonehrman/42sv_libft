@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/18 12:42:43 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 17:33:24 by cehrman          ###   ########.fr       */
+/*   Created: 2020/02/20 17:21:17 by cehrman           #+#    #+#             */
+/*   Updated: 2020/02/20 17:47:24 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*ptr;
+	char c;
 
-	ptr = dst;
-	if (!dst && !src)
-		return (dst);
-	while (n > 0)
+	if (n < 0)
 	{
-		*ptr = *((char *)src);
-		ptr++;
-		src++;
-		n--;
+		ft_putchar_fd('-', fd);
+		if (n == MININT)
+			ft_putchar_fd('2', fd);
+		ft_putnbr_fd((n == MININT) ? ((n + 2000000000) * -1) : n * -1, fd);
 	}
-	return (dst);
+	else
+	{
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		c = (char)((n % 10) + 48);
+		ft_putchar_fd(c, fd);
+	}
 }

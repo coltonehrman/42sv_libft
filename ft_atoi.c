@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 14:12:24 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/19 20:54:20 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/21 09:09:02 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int		ft_atoi(const char *str)
 	neg = 1;
 	while (ft_isspace(*str))
 		str++;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		neg = -1;
+		neg = (*str == '-') ? -1 : 1;
 		str++;
 	}
 	while (*str && ft_isdigit(*str))

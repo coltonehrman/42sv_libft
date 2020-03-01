@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 12:08:09 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/20 12:45:15 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/29 17:02:30 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		digits;
 	int		i;
+	int		digits;
 
 	digits = ft_count_digits(n);
 	if (n < 0)

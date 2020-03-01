@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 12:30:51 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/18 12:37:26 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/29 16:57:37 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*ptr;
 
-	ptr = s;
+	ptr = (char *)s;
 	while (n > 0)
 	{
 		*ptr = 0;

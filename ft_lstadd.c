@@ -6,16 +6,16 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 19:46:46 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/23 17:04:26 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/29 17:02:40 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void	ft_lstadd(t_list **alst, t_list *new_elm)
 {
-	if (!alst || !new)
+	if (!alst || !new_elm)
 		return ;
-	new->next = *alst;
-	*alst = new;
+	new_elm->next = *alst;
+	*alst = new_elm;
 }

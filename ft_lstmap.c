@@ -6,7 +6,7 @@
 /*   By: cehrman <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 19:58:27 by cehrman           #+#    #+#             */
-/*   Updated: 2020/02/21 09:51:06 by cehrman          ###   ########.fr       */
+/*   Updated: 2020/02/29 17:03:55 by cehrman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list	*map_root;
 	t_list	*map;
 	t_list	*tmp;
+	t_list	*map_root;
 
 	if (!lst || !f)
 		return (0);

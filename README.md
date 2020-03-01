@@ -24,7 +24,6 @@ make re
 Will re-compile and remove object files, leaving the `libft.a` archive file which can be compiled together with your code.
 
 ## API
-[Table of Contents](#table-of-contents)
 
  * [ft_atoi](#ft_atoi)
  * [ft_bzero]()
@@ -97,4 +96,39 @@ Will re-compile and remove object files, leaving the `libft.a` archive file whic
  * [ft_toupper]()
 
 ### ft_atoi
-[Table of Contents](#table-of-contents)
+[API](#api)
+
+*prototype*
+```c
+int		ft_atoi(const char *str)
+```
+
+*definition*
+```
+converts initial portion of |*str| to (int) representation
+
+does not account for any (int) overflows during conversion
+```
+
+*return*
+```
+converted (int) representation of |*str|
+```
+
+### ft_bzero
+[API](#api)
+
+*prototype*
+```c
+void	ft_bzero(void *s, size_t n)
+```
+
+*definition*
+```
+zeroes out memory pointed to by |*s| for |n| number of times
+```
+
+*return*
+```
+(void)
+```

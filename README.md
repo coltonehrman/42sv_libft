@@ -1,10 +1,10 @@
 
 # Libft
 
-42 Silicon Valley Project
+42 Silicon Valley Project  
 [Project Instructions](libft.en.pdf)
 
-C Library created by re-implementing some standard functions from the Standard C Library
+C Library created by re-implementing some standard functions from the Standard C Library  
 **Plus:** some addition functions that will be helpful with future projects
 
 ## Table of Contents
